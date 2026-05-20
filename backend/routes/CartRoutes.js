@@ -6,7 +6,7 @@ const {
   updateCartItem,
   removeCartItem,
   clearCart,
-} = require("../controllers/cartController");
+} = require("../controllers/CartController");
 
 const isAuth = require("../middlewares/isAuth");
 
