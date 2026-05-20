@@ -6,7 +6,7 @@ const {
   singleProduct,
   updateProduct,
   deleteProduct,
-} = require("../controllers/productControllers");
+} = require("../controllers/productController");
 
 const isAuth = require("../middlewares/isAuth");
 
