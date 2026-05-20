@@ -23,7 +23,7 @@ const server = http.createServer(app);
 // Socket.IO setup
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: "https://cartify-ecommerce-website.netlify.app",
     methods: ["GET", "POST"],
   },
 });
@@ -51,10 +51,8 @@ mongoose
 app.use(express.json());
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://cartify-ecommerce-website.netlify.app",
-    ],
+    origin: "https://cartify-ecommerce-website.netlify.app",
+
     credentials: true,
   }),
 );
