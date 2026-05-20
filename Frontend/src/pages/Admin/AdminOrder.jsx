@@ -9,11 +9,14 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 const fetchOrders = async () => {
   const token = localStorage.getItem("token");
 
-  const { data } = await axios.get("http://localhost:5000/api/orders", {
-    headers: {
-      Authorization: `Bearer ${token}`,
+  const { data } = await axios.get(
+    "https://cartify-ecommerce-website.onrender.com/api/orders",
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     },
-  });
+  );
 
   return data.orders;
 };
@@ -40,7 +43,7 @@ const AdminOrders = () => {
       const token = localStorage.getItem("token");
 
       const response = await axios.put(
-        `http://localhost:5000/api/orders/status/${id}`,
+        `https://cartify-ecommerce-website.onrender.com/api/orders/status/${id}`,
         {
           orderStatus,
         },
@@ -70,7 +73,7 @@ const AdminOrders = () => {
       const token = localStorage.getItem("token");
 
       const response = await axios.put(
-        `http://localhost:5000/api/orders/payment/${id}`,
+        `https://cartify-ecommerce-website.onrender.com/api/orders/payment/${id}`,
         {
           paymentStatus,
         },
@@ -95,7 +98,7 @@ const AdminOrders = () => {
 
   /* ================= LOADING ================= */
 
-   if (isLoading) {
+  if (isLoading) {
     return (
       <div className="loading-container">
         <div className="loading-spinner"></div>

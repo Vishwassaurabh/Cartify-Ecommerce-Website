@@ -9,7 +9,7 @@ const fetchSingleOrder = async (id) => {
   const token = localStorage.getItem("token");
 
   const { data } = await axios.get(
-    `http://localhost:5000/api/my-orders/${id}`,
+    `https://cartify-ecommerce-website.onrender.com/api/my-orders/${id}`,
     {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -45,7 +45,7 @@ const SingleOrder = () => {
       const token = localStorage.getItem("token");
 
       const response = await axios.put(
-        `http://localhost:5000/api/orders/cancel/${id}`,
+        `https://cartify-ecommerce-website.onrender.com/api/orders/cancel/${id}`,
         {},
         {
           headers: {

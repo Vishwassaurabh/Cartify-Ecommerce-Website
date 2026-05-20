@@ -10,11 +10,14 @@ import Footer from "../../components/Footer/Footer";
 const fetchCart = async () => {
   const token = localStorage.getItem("token");
 
-  const { data } = await axios.get("http://localhost:5000/api/cart", {
-    headers: {
-      Authorization: `Bearer ${token}`,
+  const { data } = await axios.get(
+    "https://cartify-ecommerce-website.onrender.com/api/cart",
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     },
-  });
+  );
 
   return data;
 };
@@ -39,7 +42,7 @@ const Cart = () => {
       const token = localStorage.getItem("token");
 
       const { data } = await axios.put(
-        `http://localhost:5000/api/cart/update/${itemId}`,
+        `https://cartify-ecommerce-website.onrender.com/api/cart/update/${itemId}`,
         { quantity },
         {
           headers: {
@@ -65,7 +68,7 @@ const Cart = () => {
       const token = localStorage.getItem("token");
 
       const { data } = await axios.delete(
-        `http://localhost:5000/api/cart/remove/${itemId}`,
+        `https://cartify-ecommerce-website.onrender.com/api/cart/remove/${itemId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

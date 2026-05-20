@@ -7,7 +7,9 @@ import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
 
 const fetchProducts = async () => {
-  const { data } = await axios.get("http://localhost:5000/api/product");
+  const { data } = await axios.get(
+    "https://cartify-ecommerce-website.onrender.com/api/product",
+  );
 
   return data.products;
 };
@@ -23,7 +25,7 @@ const Products = () => {
     queryFn: fetchProducts,
   });
 
- if (isLoading) {
+  if (isLoading) {
     return (
       <div className="loading-container">
         <div className="loading-spinner"></div>
@@ -77,9 +79,7 @@ const Products = () => {
 
                   <h3>{item.title}</h3>
 
-                  <p className="products-category">
-                    {item.category}
-                  </p>
+                  <p className="products-category">{item.category}</p>
 
                   <div className="products-footer">
                     <h2>₹ {item.price}</h2>

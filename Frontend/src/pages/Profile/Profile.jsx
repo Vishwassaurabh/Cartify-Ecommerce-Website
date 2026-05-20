@@ -13,18 +13,21 @@ import Footer from "../../components/Footer/Footer";
 const fetchProfile = async () => {
   const token = localStorage.getItem("token");
 
-  const { data } = await axios.get("http://localhost:5000/api/profile", {
-    headers: {
-      Authorization: `Bearer ${token}`,
+  const { data } = await axios.get(
+    "https://cartify-ecommerce-website.onrender.com/api/profile",
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     },
-  });
+  );
 
   return data.user;
 };
 
 const Profile = () => {
   const navigate = useNavigate();
-  
+
   const { logout } = useAuth();
   /* ================= PROFILE QUERY ================= */
 

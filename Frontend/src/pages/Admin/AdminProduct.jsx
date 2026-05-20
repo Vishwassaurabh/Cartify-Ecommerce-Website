@@ -9,11 +9,14 @@ import toast from "react-hot-toast";
 const fetchProducts = async () => {
   const token = localStorage.getItem("token");
 
-  const { data } = await axios.get("http://localhost:5000/api/product", {
-    headers: {
-      Authorization: `Bearer ${token}`,
+  const { data } = await axios.get(
+    "https://cartify-ecommerce-website.onrender.com/api/product",
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     },
-  });
+  );
 
   return data.products;
 };
@@ -21,7 +24,9 @@ const fetchProducts = async () => {
 /* ================= FETCH CATEGORIES ================= */
 
 const fetchCategories = async () => {
-  const { data } = await axios.get("http://localhost:5000/api/categories");
+  const { data } = await axios.get(
+    "https://cartify-ecommerce-website.onrender.com/api/categories",
+  );
 
   return data.categories;
 };
@@ -72,7 +77,7 @@ const AdminProducts = () => {
       const token = localStorage.getItem("token");
 
       const response = await axios.post(
-        "http://localhost:5000/api/product/create",
+        "https://cartify-ecommerce-website.onrender.com/api/product/create",
         {
           title,
           description,
@@ -114,7 +119,7 @@ const AdminProducts = () => {
       const token = localStorage.getItem("token");
 
       const response = await axios.delete(
-        `http://localhost:5000/api/product/delete/${id}`,
+        `https://cartify-ecommerce-website.onrender.com/api/product/delete/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -141,7 +146,7 @@ const AdminProducts = () => {
       const token = localStorage.getItem("token");
 
       const response = await axios.put(
-        `http://localhost:5000/api/product/update/${editProduct._id}`,
+        `https://cartify-ecommerce-website.onrender.com/api/product/update/${editProduct._id}`,
         {
           title: updateTitle,
           description: updateDescription,

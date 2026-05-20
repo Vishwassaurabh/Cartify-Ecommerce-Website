@@ -9,11 +9,14 @@ import Footer from "../../components/Footer/Footer";
 const fetchOrders = async () => {
   const token = localStorage.getItem("token");
 
-  const { data } = await axios.get("http://localhost:5000/api/my-orders", {
-    headers: {
-      Authorization: `Bearer ${token}`,
+  const { data } = await axios.get(
+    "https://cartify-ecommerce-website.onrender.com/api/my-orders",
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     },
-  });
+  );
 
   return data.orders;
 };
@@ -41,7 +44,7 @@ const Order = () => {
       const token = localStorage.getItem("token");
 
       const response = await axios.put(
-        `http://localhost:5000/api/orders/cancel/${id}`,
+        `https://cartify-ecommerce-website.onrender.com/api/orders/cancel/${id}`,
         {},
         {
           headers: {

@@ -8,11 +8,14 @@ import Footer from "../../components/Footer/Footer";
 const fetchCart = async () => {
   const token = localStorage.getItem("token");
 
-  const { data } = await axios.get("http://localhost:5000/api/cart", {
-    headers: {
-      Authorization: `Bearer ${token}`,
+  const { data } = await axios.get(
+    "https://cartify-ecommerce-website.onrender.com/api/cart",
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     },
-  });
+  );
 
   return data;
 };
@@ -75,7 +78,7 @@ const Checkout = () => {
         })) || [];
 
       const response = await axios.post(
-        "http://localhost:5000/api/orders/create",
+        "https://cartify-ecommerce-website.onrender.com/api/orders/create",
         {
           orderItems,
 
@@ -109,7 +112,7 @@ const Checkout = () => {
 
         navigate("/orders");
       }, 2500);
-    },  
+    },
 
     onError: (error) => {
       console.log(error);

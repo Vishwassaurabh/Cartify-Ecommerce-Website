@@ -10,7 +10,9 @@ import { useRef } from "react";
 import toast from "react-hot-toast";
 
 const fetchSingleProduct = async (id) => {
-  const { data } = await axios.get(`http://localhost:5000/api/product/${id}`);
+  const { data } = await axios.get(
+    `https://cartify-ecommerce-website.onrender.com/api/product/${id}`,
+  );
 
   return data.product;
 };
@@ -49,7 +51,7 @@ const SingleProduct = () => {
       }
 
       const { data } = await axios.post(
-        "http://localhost:5000/api/cart/add",
+        "https://cartify-ecommerce-website.onrender.com/api/cart/add",
         {
           product: product._id,
           quantity: 1,

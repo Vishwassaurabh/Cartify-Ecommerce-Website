@@ -6,7 +6,9 @@ import { ShoppingCart, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const fetchFeaturedProducts = async () => {
-  const { data } = await axios.get("http://localhost:5000/api/product");
+  const { data } = await axios.get(
+    "https://cartify-ecommerce-website.onrender.com/api/product",
+  );
 
   return data.products;
 };
