@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.footer {
+  width: 100%;
+  background: #020617;
+  color: white;
+  padding-top: 80px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ================= CONTAINER ================= */
+
+.footer-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 7% 60px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1.5fr;
+  gap: 40px;
+}
+
+/* ================= LOGO ================= */
+
+.footer-logo {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.footer-logo span {
+  color: orange;
+}
+
+/* ================= TEXT ================= */
+
+.footer-box p {
+  color: #cbd5e1;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.footer-box h2 {
+  font-size: 24px;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.footer-box h2::before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 45px;
+  height: 3px;
+  background: orange;
+  border-radius: 10px;
+}
+
+/* ================= LINKS ================= */
+
+.footer-box ul {
+  list-style: none;
+}
+
+.footer-box ul li {
+  margin-bottom: 15px;
+}
+
+.footer-box ul li a {
+  text-decoration: none;
+  color: #cbd5e1;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.footer-box ul li a:hover {
+  color: orange;
+  padding-left: 5px;
+}
+
+/* ================= SOCIAL ICONS ================= */
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.social-icons a {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #111827;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background: orange;
+  transform: translateY(-5px);
+}
+
+/* ================= NEWSLETTER ================= */
+
+.newsletter {
+  width: 100%;
+  height: 58px;
+  background: #111827;
+  border-radius: 50px;
+  overflow: hidden;
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.newsletter input {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  padding: 0 20px;
+  font-size: 15px;
+}
+
+.newsletter input::placeholder {
+  color: #94a3b8;
+}
+
+.newsbutton {
+  margin-top: 20px;
+  width: 140px;
+  height: 50px;
+  border: none;
+  border-radius: 12px;
+  background: orange;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.newsbutton:hover {
+  background: #ff7700;
+  transform: translateY(-3px);
+}
+
+/* ================= FOOTER BOTTOM ================= */
+
+.footer-bottom {
+  width: 100%;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 25px 7%;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #94a3b8;
+  font-size: 15px;
+}
+
+/* ================= LAPTOP ================= */
+
+@media (max-width: 1200px) {
+  .footer-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+  }
+
+  .footer-logo {
+    font-size: 36px;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .footer {
+    padding-top: 60px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    padding: 0 5% 50px;
+  }
+
+  .footer-box h2 {
+    font-size: 22px;
+  }
+
+  .footer-box p {
+    font-size: 14px;
+  }
+
+  .footer-box ul li a {
+    font-size: 14px;
+  }
+
+  .newsletter {
+    height: 55px;
+  }
+
+  .newsletter button {
+    width: 100px;
+    font-size: 14px;
+  }
+
+  .social-icons a {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 480px) {
+  .footer-logo {
+    font-size: 32px;
+  }
+
+  .footer-box h2 {
+    font-size: 20px;
+  }
+
+  .newsletter {
+    flex-direction: column;
+    height: auto;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .newsletter input {
+    width: 100%;
+    height: 55px;
+  }
+
+  .newsletter button {
+    width: 100%;
+    height: 50px;
+  }
+
+  .footer-bottom p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+}
