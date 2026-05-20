@@ -4,7 +4,7 @@ import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { FaStar, FaShoppingCart } from "react-icons/fa";
-import Footer from "../../Footer/Footer";
+import Footer from "../../components/Footer/Footer";
 import { FaArrowLeft } from "react-icons/fa";
 import { useRef } from "react";
 import toast from "react-hot-toast";

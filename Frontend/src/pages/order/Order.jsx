@@ -4,7 +4,7 @@ import axios from "axios";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { Link, useNavigate } from "react-router-dom";
 import SingleOrder from "./SingleOrder";
-import Footer from "./../../Footer/Footer";
+import Footer from "../../components/Footer/Footer";
 
 const fetchOrders = async () => {
   const token = localStorage.getItem("token");

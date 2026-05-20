@@ -3,7 +3,7 @@ import "./SingleOrder.css";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import Footer from "../../Footer/Footer";
+import Footer from "../../components/Footer/Footer";
 
 const fetchSingleOrder = async (id) => {
   const token = localStorage.getItem("token");

@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from "react";
-
 import "./Login.css";
-
 import { useMutation } from "@tanstack/react-query";
-
 import { useNavigate, Link } from "react-router-dom";
-
-import { useAuth } from "../../../AuthContext/AuthContext";
-
-import { loginAPI } from "../../../apis/user/userAPI";
+import { useAuth } from "../../AuthContext/AuthContext";
+import { loginAPI } from "../../apis/user/userAPI";
 
 const Login = () => {
   // States

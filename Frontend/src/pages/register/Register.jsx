@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./Register.css";
 import { useMutation } from "@tanstack/react-query";
-import { registerAPI } from "../../../apis/user/userAPI";
+import { registerAPI } from "../../apis/user/userAPI";
 import { useNavigate,Link } from "react-router-dom";
-import { useAuth } from "../../../AuthContext/AuthContext";
+import { useAuth } from "../../AuthContext/AuthContext";
 
 const Register = () => {
   const [email, setEmail] = useState("");

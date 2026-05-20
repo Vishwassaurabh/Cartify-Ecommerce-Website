@@ -4,9 +4,9 @@ import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import { User, Mail, ShieldCheck, ShoppingBag, LogOut } from "lucide-react";
-import { useAuth } from "../../../AuthContext/AuthContext";
+import { useAuth } from "../../AuthContext/AuthContext";
 import toast from "react-hot-toast";
-import Footer from "./../../Footer/Footer";
+import Footer from "../../components/Footer/Footer";
 
 /* ================= FETCH PROFILE ================= */
 

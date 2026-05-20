@@ -1,7 +1,7 @@
 import React from "react";
 import "./About.css";
 import { FaShippingFast, FaHeadset, FaLock, FaUndo } from "react-icons/fa";
-import Footer from "../../Footer/Footer";
+import Footer from "../../components/Footer/Footer";
 
 const About = () => {
   return (

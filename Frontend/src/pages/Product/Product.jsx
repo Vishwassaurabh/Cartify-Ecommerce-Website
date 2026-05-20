@@ -3,7 +3,7 @@ import "./Product.css";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { FaStar, FaShoppingCart } from "react-icons/fa";
-import Footer from "../../Footer/Footer";
+import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
 
 const fetchProducts = async () => {

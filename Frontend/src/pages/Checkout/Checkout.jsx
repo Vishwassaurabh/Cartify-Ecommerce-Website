@@ -3,7 +3,7 @@ import "./Checkout.css";
 import axios from "axios";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
-import Footer from "../../Footer/Footer";
+import Footer from "../../components/Footer/Footer";
 
 const fetchCart = async () => {
   const token = localStorage.getItem("token");
