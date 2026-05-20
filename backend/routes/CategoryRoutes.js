@@ -6,7 +6,7 @@ const {
   getCategory,
   updateCategory,
   deleteCategory,
-} = require("../controllers/CategoryControllers");
+} = require("../controllers/CategoryController");
 
 const isAuth = require("../middlewares/isAuth");
 

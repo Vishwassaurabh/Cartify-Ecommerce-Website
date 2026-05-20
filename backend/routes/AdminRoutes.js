@@ -1,6 +1,6 @@
 const express = require("express");
 
-const { getAdminDashboard } = require("../controllers/AdminControllers");
+const { getAdminDashboard } = require("../controllers/AdminController");
 
 const isAuth = require("../middlewares/isAuth");
 

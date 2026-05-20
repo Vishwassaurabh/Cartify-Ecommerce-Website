@@ -6,7 +6,7 @@ const {
   logout,
   checkAuth,
   getProfile,
-} = require("../controllers/AuthControllers");
+} = require("../controllers/AuthController");
 const isAuth = require("../middlewares/isAuth");
 
 const authRoutes = express.Router();
