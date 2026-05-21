@@ -24,8 +24,14 @@ const FeaturedProducts = () => {
     queryFn: fetchFeaturedProducts,
   });
 
-  if (isLoading) {
-    return <h1 className="loading">Loading...</h1>;
+   if (isLoading) {
+    return (
+      <div className="loading-container">
+        <div className="loading-spinner"></div>
+
+        <p>Loading...</p>
+      </div>
+    );
   }
 
   if (isError) {
