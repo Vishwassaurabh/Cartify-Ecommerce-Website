@@ -3,7 +3,6 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const asyncHandler = require("express-async-handler");
 
-
 // Register User
 const registerUser = async (req, res) => {
   try {
@@ -44,7 +43,6 @@ const registerUser = async (req, res) => {
   }
 };
 
-
 // Login User
 const loginUser = async (req, res) => {
   try {
@@ -64,10 +62,7 @@ const loginUser = async (req, res) => {
       });
     }
 
-    const isMatch = await bcrypt.compare(
-      password,
-      user.password
-    );
+    const isMatch = await bcrypt.compare(password, user.password);
 
     if (!isMatch) {
       return res.status(400).json({
@@ -83,7 +78,7 @@ const loginUser = async (req, res) => {
       process.env.JWT_SECRET,
       {
         expiresIn: "30d",
-      }
+      },
     );
 
     res.cookie("token", token, {
@@ -108,7 +103,6 @@ const loginUser = async (req, res) => {
   }
 };
 
-
 // Check Auth
 const checkAuth = asyncHandler(async (req, res) => {
   const token = req.cookies.token;
@@ -120,10 +114,7 @@ const checkAuth = asyncHandler(async (req, res) => {
   }
 
   try {
-    const decoded = jwt.verify(
-      token,
-      process.env.JWT_SECRET
-    );
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
     res.json({
       isAuthenticated: true,
@@ -136,13 +127,14 @@ const checkAuth = asyncHandler(async (req, res) => {
   }
 });
 
-
 // Logout
 const logout = async (req, res) => {
   try {
     res.cookie("token", "", {
       httpOnly: true,
       expires: new Date(0),
+      secure: true,
+      sameSite: "none",
     });
 
     res.status(200).json({
@@ -158,12 +150,8 @@ const logout = async (req, res) => {
 // GET PROFILE
 
 const getProfile = async (req, res) => {
-
   try {
-
-    const user = await User.findById(
-      req.user.id
-    ).select("-password");
+    const user = await User.findById(req.user.id).select("-password");
 
     if (!user) {
       return res.status(404).json({
@@ -175,9 +163,7 @@ const getProfile = async (req, res) => {
       success: true,
       user,
     });
-
   } catch (error) {
-
     res.status(500).json({
       message: error.message,
     });
