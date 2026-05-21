@@ -127,17 +127,16 @@ const checkAuth = asyncHandler(async (req, res) => {
   }
 });
 
-// Logout
 const logout = async (req, res) => {
   try {
-    res.cookie("token", "", {
+    res.clearCookie("token", {
       httpOnly: true,
-      expires: new Date(0),
       secure: true,
       sameSite: "none",
     });
 
     res.status(200).json({
+      success: true,
       message: "Logout successful",
     });
   } catch (error) {
