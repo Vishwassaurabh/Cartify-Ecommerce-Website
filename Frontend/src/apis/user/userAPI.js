@@ -3,7 +3,7 @@ import axios from "axios";
 //-------Registration-------------
 export const registerAPI = async (userData) => {
   const response = await axios.post(
-    "http://localhost:5000/api/user/register",
+    "https://cartify-ecommerce-website.onrender.com/api/user/register",
     {
       email: userData.email,
       password: userData.password,
@@ -19,7 +19,7 @@ export const registerAPI = async (userData) => {
 //Login
 export const loginAPI = async (userData) => {
   const response = await axios.post(
-    "http://localhost:5000/api/user/login",
+    "https://cartify-ecommerce-website.onrender.com/api/user/login",
     {
       email: userData.email,
       password: userData.password,
@@ -33,7 +33,7 @@ export const loginAPI = async (userData) => {
 
 export const checkUserAuthStatusAPI = async () => {
   const response = await axios.get(
-    "http://localhost:5000/api/user/auth/check",
+    "https://cartify-ecommerce-website.onrender.com/api/user/auth/check",
     {
       withCredentials: true,
     }
@@ -44,7 +44,7 @@ export const checkUserAuthStatusAPI = async () => {
 // ! logout
 export const logoutAPI = async () => {
   const response = await axios.post(
-    "http://localhost:5000/api/user/logout",
+    "https://cartify-ecommerce-website.onrender.com/api/user/logout",
     {},
     {
       withCredentials: true,
